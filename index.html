@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Interactive card details form</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <div class="img">
+        <div class="img1">
+          <img height="100%" src="./images/bg-main-desktop.png" />
+        </div>
+        <div class="img2">
+          <img src="./images/bg-card-front.png" width="450px" />
+          <div class="icon">
+            <img src="./images/card-logo.svg" />
+          </div>
+          <h1 id="cardNum">0000 0000 0000 0000</h1>
+          <div class="txt">
+            <p id="cardName">JANE APPLESEED</p>
+            <p><span id="mm">00</span>/<span id="yy">00</span></p>
+          </div>
+        </div>
+        <div class="img3">
+          <img src="./images/bg-card-back.png" width="450px" />
+          <p id="changeCvc">000</p>
+        </div>
+      </div>
+
+      <div class="second">
+        <form  id="form" name="cardForm" onsubmit="return false">
+          <div class="card">
+            <h5 id="inputName">CARDHOLDER NAME</h5>
+            <input
+              type="text"
+              name="box"
+              id="myselect"
+              onchange="replaceName()"
+              placeholder="e.g. Jane Appleseed"
+            />
+          </div>
+          <p id="nameError"></p>
+
+          <div class="num">
+            <h5>CARD NUMBER</h5>
+            <input
+              type="text"
+              value=""
+              name="box"
+              maxlength="16"
+              id="card"
+              onchange="changeNum()"
+              placeholder="e.g. 1234 5678 9123 0000"
+            />
+          </div>
+          <p id="numError"></p>
+          <!-- <div class="date"> -->
+          <h5>EXP. DATE (MM/YY) &nbsp; &nbsp; CVC</h5>
+          <div class="date">
+            <div class="month_year">
+              <input
+                type="text"
+                name="box"
+                onchange="newmonth()"
+                id="month"
+                placeholder="MM"
+              />
+              <input
+                type="text"
+                name="box"
+                onchange="newyear()"
+                id="year"
+                placeholder="YY"
+              />
+              <p id="dateError"></p>
+            </div>
+            <div class="inputcvv">
+              <input
+                type="text"
+                name="box"
+                onchange="cvcchange()"
+                id="newcvc"
+                placeholder="e.g. 123"
+              />
+              <p id="cvvError"></p>
+            </div>
+          </div>
+
+          <br />
+          <button id="submit" onclick="validateForm()">Confirm</button>
+          <!-- <button class="buttton button1"> -->
+          <!-- <a id="conf" href="#">Confirm</a> -->
+          <!-- </button> -->
+        </form>
+        <br />
+        <div class="pop-up" id="pop-up">
+          <img src="./images/icon-complete.svg" />
+          <h2>THANK YOU!</h2>
+          <p style="color: red;">We 've added your card details</p>
+          <button id="continue">Continue</button>
+
+        </div>
+      </div>
+    </div>
+    <script src="./script.js"></script>
+  </body>
+</html>
